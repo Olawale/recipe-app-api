@@ -25,3 +25,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        
+    - name: Trigger my downstream workflow
+      run: |
+        curl -XPOST -u "${{ secrets.GIT_CREDENTIALS }}" -H "Accept:application/vnd.github" -H "Content-Type:application/json" https://api.github.com/repos/Olawale/bbhs-97-api/blob/master/.github/workflows/docker-image.yml/dispatches --data '{"ref": "master" }'
