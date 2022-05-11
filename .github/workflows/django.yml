@@ -28,4 +28,4 @@ jobs:
         
     - name: Trigger my downstream workflow
       run: |
-        curl -XPOST -H "Authorization: token ${ secrets.PAT_TOKEN }" -H "Accept:application/vnd.github.v3+json" https://api.github.com/repos/Olawale/bbhs-97-api/dispatches --d "{"my_event": "ola_event" }"
+        curl -XPOST -H "Authorization: token ${{ secrets.PAT_TOKEN }}" -H "Accept:application/vnd.github.v3+json" https://api.github.com/repos/Olawale/bbhs-97-api/dispatches --d "{"my_event": "ola_event" }"
