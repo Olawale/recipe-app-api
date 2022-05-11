@@ -28,4 +28,4 @@ jobs:
         
     - name: Trigger my downstream workflow
       run: |
-        curl -XPOST -u "Olawale:${{ secrets.PAT_TOKEN }}" -H "Accept:application/vnd.github" -H "Content-Type:application/json" https://api.github.com/repos/Olawale/bbhs-97-api/blob/master/.github/workflows/docker-image.yml/dispatches --data '{"ref": "master" }'
+        curl -XPOST -H "Authorization: token ${ secrets.PAT_TOKEN }" -H "Accept:application/vnd.github.v3+json" https://api.github.com/repos/Olawale/bbhs-97-api/dispatches --d "{"my_event": "ola_event" }"
